@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#375b45" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="stylesheet" href="styles.css" />
+  <title>Tendril Alpha</title>
+</head>
+<body>
+  <header><button id="menuBtn" aria-label="Toggle navigation">☰</button><div><strong>Tendril</strong><span class="subtitle">What needs tending?</span></div><button class="primary" id="quickCaptureBtn">+ Capture</button></header>
+  <div class="shell">
+    <nav id="nav">
+      <button data-view="today" class="active">Today</button>
+      <button data-view="capture">Capture <span id="captureCount" class="badge">0</span></button>
+      <button data-view="threads">Threads</button>
+      <button data-view="actions">Actions</button>
+      <button data-view="relationships">Relationships</button>
+      <button data-view="reviews">Reviews</button>
+      <button data-view="operations">Operations</button>
+      <button data-view="settings">Backup</button>
+    </nav>
+    <main id="app"></main>
+  </div>
+  <dialog id="captureDialog">
+    <form method="dialog" id="quickCaptureForm">
+      <h2>Quick capture</h2>
+      <label>What caught your attention?<textarea id="captureText" required autofocus></textarea></label>
+      <details><summary>Optional source details</summary>
+        <label>Source type<select id="sourceType"><option>idea</option><option>email</option><option>meeting</option><option>conversation</option><option>web</option><option>other</option></select></label>
+        <label>Source title or email subject<input id="sourceTitle" /></label>
+        <label>Sender or person<input id="sourcePerson" /></label>
+        <label>Link or searchable reference<input id="sourceReference" /></label>
+      </details>
+      <div class="actions"><button value="cancel">Cancel</button><button class="primary" value="default">Capture</button></div>
+    </form>
+  </dialog>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
